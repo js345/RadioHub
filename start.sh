@@ -1,0 +1,1 @@
+sudo apachectl -k start
