@@ -32,10 +32,27 @@ session_start();
 	  	</form>	
 	  		<?php include 'showpreference.php';?>
 
-	<p><big>Suggested Radio Station:</big></p>
+	<p><big>Recommended Song:</big></p>
 
 	  		<?php include 'songsearchwithpreference.php';?>
 
+
+	<p><big>Tell us what you like:</big></p>
+
+		<form method="post" action="userlike.php">	
+		<div class = "row">	
+			<div class="form-group" >
+				<input name = "SName" type="text" class="form-control" >
+				
+			</div>
+			<button class="btn btn-default" name="submit" type="submit">LIKE :)</button>
+		</div>	
+	
+		<p><big>Here are the songs you like:</big></p>	
+
+		<?php include 'likelist.php';?>
+
+	  	</form>	
 
 	</div>
 	</body>
