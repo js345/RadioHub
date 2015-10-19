@@ -11,3 +11,9 @@
 * 8. apachectl start
 * 9. go to localhost:[port] in browser.
 * 10. replace public_html folder on cpanel with the latest one in your local.
+
+## FAQ
+* Q : The webserver does not update the webpage.
+* A : Clear caches in your browser.
+* Q : Permission denied when accessing in localhost
+* A : run "chmod -R 777 public_html/"
