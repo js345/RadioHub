@@ -16,15 +16,15 @@ if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }
 
-$sql = "SELECT Preference FROM User WHERE Username= '$temp'";
+$sql = "SELECT Radio.Name FROM Radio, User WHERE Username= '$temp' AND User.Preference = Radio.Genre";
 
 $result = $conn->query($sql);
-
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) {
-	        //echo $row["Preference"];
+	        echo $row['Name'];
+	        echo "<br>";
 	    }
 	} else {
 	    echo "0 results";
