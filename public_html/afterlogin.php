@@ -7,7 +7,7 @@ session_start();
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  
 <head>
-<title> signup</title>
+<title> Radio Station</title>
 <link rel="stylesheet" type="text/css" href=" ../cssfolder/style.css">
 </head>
 	<body>
@@ -30,7 +30,13 @@ session_start();
 		</div>	
 		
 	  	</form>	
-	  		<?php include 'showpreference.php';?>		
+	  		<?php include 'showpreference.php';?>
+
+	<p><big>Suggested Radio Station:</big></p>
+
+	  		<?php include 'songsearchwithpreference.php';?>
+
+
 	</div>
 	</body>
 </html>
