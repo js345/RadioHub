@@ -16,14 +16,14 @@ if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }
 
-$sql = "SELECT Song.SName FROM Song, User WHERE Username= '$temp' AND User.Preference = Song.Genre";
+$sql = "SELECT RName FROM Likes WHERE Username= '$temp'";
 
 $result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
 	    while($row = $result->fetch_assoc()) {
-	       	echo $row['SName'];
+	       	echo $row['RName'];
 	        //<button class="btn btn-default" name="submit" type="submit">Add</button>
 	        echo "<br>";
 	    }

@@ -9,12 +9,13 @@ $db_password = "admin"; // change to your database password
 $database = "csprojec_radiohub"; // provide your database name
 $db_table = "User"; // your database table name
 $conn = mysqli_connect($hostname, $db_user,$db_password, $database);
-$preference = $_POST['preference'];
+$SName= $_POST['SName'];
 if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }
 
-		$sql = "UPDATE User SET Preference='$preference' WHERE Username= '$temp'";
+		//$sql = "ADD Likes SET RName='$SName' WHERE Username= '$temp'";
+		$sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$SName')";
 
 		$query = mysqli_query($conn, $sql);
 	if($query) {
