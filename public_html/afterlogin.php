@@ -45,15 +45,26 @@ session_start();
 				<input name = "SName" type="text" class="form-control" >
 				
 			</div>
-			<button class="btn btn-default" name="submit" type="submit">LIKE :)</button>
-		</div>	
-	
-		<p><big>Here are the songs you like:</big></p>	
-
-		<?php include 'likelist.php';?>
-
+			<button class="btn btn-default" name="submit" type="submit">Like :)</button>
+		</div>
 	  	</form>	
+	
+	<p><big>Tell us song you want to remove:</big></p>
 
+		<form method="post" action="removelikesong.php">	
+		<div class = "row">	
+			<div class="form-group" >
+				<input name = "SName" type="text" class="form-control" >
+				
+			</div>
+			<button class="btn btn-default" name="submit" type="submit">Remove :)</button>
+		</div>
+	  	</form>	
+	  	
+	<p><big>Here are the songs you like:</big></p>	
+
+			<?php include 'likelist.php';?>
+	  	
 	</div>
 	</body>
 </html>

@@ -14,7 +14,7 @@ if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }
 
-		$sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$SName')";
+		$sql = "DELETE FROM Likes WHERE Username = '$temp' AND RName = '$SName'";
 
 		$query = mysqli_query($conn, $sql);
 	if($query) {
