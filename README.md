@@ -1,19 +1,14 @@
 # RadioHub
-* Make a pull request of this repository.
-* Then set up apache server by using the following command.
-* 1. sudo su
-* 2. cd /etc/apache2/
-* 3. cp httpd.conf httpd.conf.bak //make a copy of old configuration
-* 4. vim httpd.conf
-* 5. uncomment LoadModule php5_module libexec/apache2/libphp5.so by removing "#"
-* 6. change Listen [port] to port you want.
-* 7. change DocumentRoot to the local path of this directory's public html folder.
-* 8. apachectl start
-* 9. go to localhost:[port] in browser.
-* 10. replace public_html folder on cpanel with the latest one in your local.
+* 0. clone this repo to your local
+* 1. cd RadioHub/public_html
+* 2. php -S localhost:8000
 
-## FAQ
-* Q : The webserver does not update the webpage.
-* A : Clear caches in your browser.
-* Q : Permission denied when accessing in localhost
-* A : run "chmod -R 777 public_html/"
+# Making Changes and Deploy on Cpanel
+* 1. git commit
+* 2. git push
+* 3. ssh netid@web.engr.illinois.edu
+* 4. sudo -i -u csproject
+* 5. cd RadioHub
+* 6. git pull
+* 7. cd ../
+* 8. cp -r RadioHub/public_html ./
