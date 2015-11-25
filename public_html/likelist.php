@@ -10,7 +10,7 @@ $conn = new mysqli($hostname, $db_user, $db_password, $database);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
 if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
