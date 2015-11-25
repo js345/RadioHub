@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 		if ($rows == 1) {
 			$_SESSION['login_user']=$name; // Initializing Session
 			$_SESSION['user_password']=$password;
-			header("location: afterlogin.php"); // Redirecting To Other Page
+			header("location: profile.html"); // Redirecting To Other Page
 		} 
 		else {
 			$error = "Username or Password is invalid";
