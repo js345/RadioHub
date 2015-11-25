@@ -69,7 +69,7 @@ session_start();
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Change Preference</a></li>
+                <li><a href="changePreference.php">Change Preference</a></li>
                 <li><a href="#">Search Songs</a></li>
                 <li><a href="#">Logout</a></li>
             </ul>
@@ -93,12 +93,15 @@ session_start();
     <div class="row">
         <div class="col-sm-4">
             <p></p>
+            <button type="button" class="btn btn-danger">Dislike</button>
         </div>
         <div class="col-sm-4">
             <p></p>
+            <button type="button" class="btn btn-danger">Dislike</button>
         </div>
         <div class="col-sm-4">
             <p></p>
+            <button type="button" class="btn btn-danger">Dislike</button>
             <!-- img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image" -->
         </div>
     </div>
