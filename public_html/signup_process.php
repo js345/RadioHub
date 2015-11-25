@@ -24,7 +24,7 @@ $query = mysqli_query($conn, $sql);
 */
 
 if($query) {
-	header("location: profile.html");
+	header("location: profile.php");
 	//echo "Thanks for signing up"; 
 } else {
 	echo "Error: ".  mysqli_error($conn);
