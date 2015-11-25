@@ -1,6 +1,8 @@
+<?php
+session_start();
+?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>Bootstrap Theme Simply Me</title>
@@ -79,9 +81,9 @@
 <div class="container-fluid bg-1 text-center">
     <h3 class="margin">My preference</h3>
     <!-- img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350" -->
-    <h3>
+    <p>
         <?php include 'showpreference.php';?>
-    </h3>
+    </p>
 
 </div>
 

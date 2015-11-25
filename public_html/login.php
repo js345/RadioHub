@@ -6,8 +6,6 @@ header("location: index.html");
 
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html>
