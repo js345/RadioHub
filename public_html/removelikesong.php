@@ -10,6 +10,7 @@ $database = "csprojec_radiohub"; // provide your database name
 $db_table = "User"; // your database table name
 $conn = mysqli_connect($hostname, $db_user,$db_password, $database);
 $SName= $_POST['SName'];
+echo $SName;
 if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }
@@ -23,7 +24,5 @@ if (isset($_SESSION['login_user'])){
 } else {
 	echo "Error: ".  mysqli_error($conn);
 }
-	mysql_close($connection); // Closing Connection
-	
 
 ?>

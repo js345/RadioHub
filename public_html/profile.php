@@ -143,9 +143,9 @@ function showSongs($num) {
             <form method="post" action="removelikesong.php">
                 <div class = "row">
                     <div class="form-group" >
-                        <input name = $like1 type="text" class="form-control" >
+                        <input type="hidden" name="SName" value= <?php echo $like1 ?> >
                     </div>
-                    <button type="button" class="btn btn-danger">Dislike</button>
+                    <button type="submit" class="btn btn-danger">Dislike</button>
                 </div>
             </form>
 
@@ -157,7 +157,14 @@ function showSongs($num) {
                     echo $like2;
                 ?>
             </p>
-            <button type="button" class="btn btn-danger">Dislike</button>
+            <form method="post" action="removelikesong.php">
+                <div class = "row">
+                    <div class="form-group" >
+                        <input type="hidden" name="SName" value= <?php echo $like2 ?> >
+                    </div>
+                    <button type="submit" class="btn btn-danger">Dislike</button>
+                </div>
+            </form>
         </div>
         <div class="col-sm-4">
             <p>
