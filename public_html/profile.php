@@ -143,7 +143,7 @@ function showSongs($num) {
             <form method="post" action="removelikesong.php">
                 <div class = "row">
                     <div class="form-group" >
-                        <input type="hidden" name="SName" value= <?php echo $like1 ?> >
+                        <input type="hidden" name="SName" value= <?php echo "'{$like1}'" ?> >
                     </div>
                     <button type="submit" class="btn btn-danger">Dislike</button>
                 </div>
@@ -160,7 +160,7 @@ function showSongs($num) {
             <form method="post" action="removelikesong.php">
                 <div class = "row">
                     <div class="form-group" >
-                        <input type="hidden" name="SName" value= <?php echo $like2 ?> >
+                        <input type="hidden" name="SName" value= <?php echo "'{$like2}'" ?> >
                     </div>
                     <button type="submit" class="btn btn-danger">Dislike</button>
                 </div>
@@ -173,7 +173,14 @@ function showSongs($num) {
                     echo $like3;
                 ?>
             </p>
-            <button type="button" class="btn btn-danger">Dislike</button>
+            <form method="post" action="removelikesong.php">
+                <div class = "row">
+                    <div class="form-group" >
+                        <input type="hidden" name="SName" value= <?php echo "'{$like3}'" ?> >
+                    </div>
+                    <button type="submit" class="btn btn-danger">Dislike</button>
+                </div>
+            </form>
             <!-- img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image" -->
         </div>
     </div>
