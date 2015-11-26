@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9b912981-48e1-44ce-91ba-d58a2f1b0104" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/profile.php" afterPath="$PROJECT_DIR$/public_html/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/removelikesong.php" afterPath="$PROJECT_DIR$/public_html/removelikesong.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RadioHub.iws" />
@@ -60,23 +59,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.666666">
-              <caret line="178" column="85" selection-start-line="178" selection-start-column="85" selection-end-line="178" selection-end-column="85" />
+            <state vertical-scroll-proportion="0.44262296">
+              <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
               <folding>
-                <marker date="1448498995000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
-                <marker date="1448498995000" expanded="true" signature="4807:5361" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="4823:4957" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="5018:5346" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="5054:5326" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="5099:5221" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="5392:6049" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="5408:5542" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="6148:6370" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="6290:6363" placeholder="..." />
-                <marker date="1448498995000" expanded="true" signature="6437:6492" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
+                <marker date="1448503151000" expanded="true" signature="4905:5459" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="4921:5055" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="5116:5444" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="5152:5424" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="5197:5319" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="5490:6147" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="5506:5640" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="6246:6468" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="6388:6461" placeholder="..." />
+                <marker date="1448503151000" expanded="true" signature="6535:6590" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -85,20 +84,20 @@
       <file leaf-file-name="afterlogin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/afterlogin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-35.0">
-              <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="removelikesong.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="removelikesong.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/removelikesong.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38593483">
+            <state vertical-scroll-proportion="-4.4117646">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
-                <marker date="1448499233000" expanded="true" signature="578:641" placeholder="DELETE FROM ..." />
+                <marker date="1448500960000" expanded="true" signature="578:641" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -140,8 +139,8 @@
         <option value="$PROJECT_DIR$/public_html/signup_process.php" />
         <option value="$PROJECT_DIR$/public_html/signup.html" />
         <option value="$PROJECT_DIR$/public_html/likelist.php" />
-        <option value="$PROJECT_DIR$/public_html/profile.php" />
         <option value="$PROJECT_DIR$/public_html/removelikesong.php" />
+        <option value="$PROJECT_DIR$/public_html/profile.php" />
       </list>
     </option>
   </component>
@@ -708,40 +707,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/profile.php">
+    <entry file="file://$PROJECT_DIR$/public_html/removelikesong.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.666666">
-          <caret line="178" column="85" selection-start-line="178" selection-start-column="85" selection-end-line="178" selection-end-column="85" />
+        <state vertical-scroll-proportion="-4.4117646">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <marker date="1448498995000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
-            <marker date="1448498995000" expanded="true" signature="4807:5361" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="4823:4957" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="5018:5346" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="5054:5326" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="5099:5221" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="5392:6049" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="5408:5542" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="6148:6370" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="6290:6363" placeholder="..." />
-            <marker date="1448498995000" expanded="true" signature="6437:6492" placeholder="..." />
+            <marker date="1448500960000" expanded="true" signature="578:641" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/afterlogin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-35.0">
-          <caret line="56" column="47" selection-start-line="56" selection-start-column="47" selection-end-line="56" selection-end-column="47" />
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/removelikesong.php">
+    <entry file="file://$PROJECT_DIR$/public_html/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38593483">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.44262296">
+          <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
           <folding>
-            <marker date="1448499233000" expanded="true" signature="578:641" placeholder="DELETE FROM ..." />
+            <marker date="1448503151000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
+            <marker date="1448503151000" expanded="true" signature="4905:5459" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="4921:5055" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="5116:5444" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="5152:5424" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="5197:5319" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="5490:6147" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="5506:5640" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="6246:6468" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="6388:6461" placeholder="..." />
+            <marker date="1448503151000" expanded="true" signature="6535:6590" placeholder="..." />
           </folding>
         </state>
       </provider>

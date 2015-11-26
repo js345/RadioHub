@@ -47,7 +47,7 @@ function showSongs($num) {
 <html>
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>Bootstrap Theme Simply Me</title>
+    <title>RadioHub</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -121,7 +121,10 @@ function showSongs($num) {
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-    <h3 class="margin">My preference</h3>
+    <h3><?php if (isset($_SESSION['login_user']))
+            echo $_SESSION['login_user'];?>
+    </h3>
+    <h2 class="margin">Your Preference</h2>
     <!-- img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350" -->
     <h>
         <?php include 'showpreference.php';?>
