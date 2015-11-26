@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b912981-48e1-44ce-91ba-d58a2f1b0104" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/profile.php" afterPath="$PROJECT_DIR$/public_html/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/login.php" afterPath="$PROJECT_DIR$/public_html/login.php" />
     </list>
     <ignored path="RadioHub.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,6 +24,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public_html/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.09836066">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -59,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44262296">
+            <state vertical-scroll-proportion="-11.25">
               <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
               <folding>
                 <marker date="1448503151000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
@@ -141,6 +150,7 @@
         <option value="$PROJECT_DIR$/public_html/likelist.php" />
         <option value="$PROJECT_DIR$/public_html/removelikesong.php" />
         <option value="$PROJECT_DIR$/public_html/profile.php" />
+        <option value="$PROJECT_DIR$/public_html/login.php" />
       </list>
     </option>
   </component>
@@ -607,14 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.21968617">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/aftersignup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -727,7 +729,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44262296">
+        <state vertical-scroll-proportion="-11.25">
           <caret line="126" column="29" selection-start-line="126" selection-start-column="29" selection-end-line="126" selection-end-column="29" />
           <folding>
             <marker date="1448503151000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
@@ -742,6 +744,14 @@
             <marker date="1448503151000" expanded="true" signature="6388:6461" placeholder="..." />
             <marker date="1448503151000" expanded="true" signature="6535:6590" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09836066">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
