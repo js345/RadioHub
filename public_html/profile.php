@@ -113,7 +113,7 @@ function showSongs($num) {
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="changePreference.php">Change Preference</a></li>
                 <li><a href="#">Search Songs</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
     </div>

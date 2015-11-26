@@ -16,7 +16,7 @@ if (isset($_SESSION['login_user'])){
 $sql = "DELETE FROM Likes WHERE Username = '$temp' AND RName = '$SName'";
 $query = mysqli_query($conn, $sql);
 if($query) {
-	header("location: afterlogin.php"); 
+	header("location: profile.php"); 
 	//echo "Thanks for signing up"; 
 } else {
 	echo "Error: ".  mysqli_error($conn);
