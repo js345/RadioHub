@@ -18,7 +18,7 @@ if (isset($_SESSION['login_user'])){
 
 		$query = mysqli_query($conn, $sql);
 	if($query) {
-	header("location: afterlogin.php"); 
+	header("location: changePreference.php"); 
 	//echo "Thanks for signing up"; 
 } else {
 	echo "Error: ".  mysqli_error($conn);
