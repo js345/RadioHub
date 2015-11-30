@@ -112,7 +112,7 @@ function showSongs($num) {
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="changePreference.php">Change Preference</a></li>
-                <li><a href="#">Search Songs</a></li>
+                <li><a href="songsearch.php">Search Songs</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
@@ -194,7 +194,7 @@ function showSongs($num) {
 <div class="container-fluid bg-3 text-center">
     <h3 class="margin">Find More Songs?</h3>
     <p>Click the button to find more songs. </p>
-    <a href="#" class="btn btn-default btn-lg">
+    <a href="songsearch.php" class="btn btn-default btn-lg">
         <span class="glyphicon glyphicon-search"></span> Search
     </a>
 </div>
