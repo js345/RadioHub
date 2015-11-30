@@ -1,6 +1,5 @@
 <?php
 session_start();
-/*
 function allSongs(){
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
     $db_user = "csprojec_admin"; // change to your database password
@@ -8,16 +7,12 @@ function allSongs(){
     $database = "csprojec_radiohub"; // provide your database name
     $db_table = "User"; // your database table name
     $conn = new mysqli($hostname, $db_user, $db_password, $database);
-
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
     if (isset($_SESSION['login_user'])) {
         $temp = $_SESSION['login_user'];
     }
-
     // $sql = "SELECT RName FROM Likes WHERE Username= '$temp'";
     $sql = "SELECT Song.SName FROM Song, User WHERE Username= '$temp' AND User.Preference = Song.Genre";
     $result = $conn->query($sql);
@@ -29,7 +24,6 @@ function allSongs(){
         $count++;
     }
 
-    
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
@@ -42,7 +36,7 @@ function allSongs(){
     $conn->close();
     return $arrayofrows;
 }
-*/
+
 
 
 
@@ -138,25 +132,25 @@ function recommendSongs($num) {
 <body>
 
 <!-- Navbar -->
-	<nav class="navbar navbar-default">
-	    <div class="container">
-	        <div class="navbar-header">
-	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	            </button>
-	            <a class="navbar-brand" href="profile.php">Me</a>
-	        </div>
-	        <div class="collapse navbar-collapse" id="myNavbar">
-	            <ul class="nav navbar-nav navbar-right">
-	                <li><a href="changePreference.php">Change Preference</a></li>
-	                <li><a href="#">Search Songs</a></li>
-	                <li><a href="logout.php">Logout</a></li>
-	            </ul>
-	        </div>
-	    </div>
-	</nav>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="profile.php">Me</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="changePreference.php">Change Preference</a></li>
+                <li><a href="#">Search Songs</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </body>
 
 
@@ -269,103 +263,96 @@ function recommendSongs($num) {
 
 
 <div class="container-fluid bg-3 text-center">
-<head>
-  <meta charset="utf-8">
-  <title>jQuery UI Autocomplete - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script>
-  $(function() {
-    //var availableTags = allSongs();
-    // var availableTags = [
-    //   "ActionScript",
-    //   "AppleScript",
-    //   "Asp",
-    //   "BASIC",
-    //   "C",
-    //   "C++",
-    //   "Clojure",
-    //   "COBOL",
-    //   "ColdFusion",
-    //   "Erlang",
-    //   "Fortran",
-    //   "Groovy",
-    //   "Haskell",
-    //   "Java",
-    //   "JavaScript",
-    //   "Lisp",
-    //   "Perl",
-    //   "PHP",
-    //   "Python",
-    //   "Ruby",
-    //   "Scala",
-    //   "Scheme"
-    // ];
-    //$( "#tags" ).autocomplete({
-    //  source: availableTags
-   // });
-  });
-  </script>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery UI Autocomplete - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script>
+            $(function() {
+                var availableTags = allSongs();
+                // var availableTags = [
+                //   "ActionScript",
+                //   "AppleScript",
+                //   "Asp",
+                //   "BASIC",
+                //   "C",
+                //   "C++",
+                //   "Clojure",
+                //   "COBOL",
+                //   "ColdFusion",
+                //   "Erlang",
+                //   "Fortran",
+                //   "Groovy",
+                //   "Haskell",
+                //   "Java",
+                //   "JavaScript",
+                //   "Lisp",
+                //   "Perl",
+                //   "PHP",
+                //   "Python",
+                //   "Ruby",
+                //   "Scala",
+                //   "Scheme"
+                // ];
+                $( "#tags" ).autocomplete({
+                    source: availableTags
+                });
+            });
+        </script>
+    </head>
+    <body>
 
-<h3 class="margin">Not found?</h3>
-<p><big>Tell us what you like:</big></p>
-<div class="ui-widget">
-  <!-- <label for="tags">Tags: </label> -->
-  <input id="tags">
-  <form method="post" action="userlike.php">  
-        <div class = "margin"> 
-            <div class="form-group" >
-                <input type = "hidden" name = "SName" type="text" class="form-control" >
+
+    <h3 class="margin">Not found?</h3>
+    <p><big>Tell us what you like:</big></p>
+    <div class="ui-widget">
+        <!-- <label for="tags">Tags: </label> -->
+        <input id="tags">
+        <form method="post" action="userlike.php">
+            <div class = "margin">
+                <div class="form-group" >
+                    <input type = "hidden" name = "SName" type="text" class="form-control" >
+                </div>
+                <button class="btn btn-default" name="submit" type="submit">Like :)</button>
             </div>
-            <button class="btn btn-default" name="submit" type="submit">Like :)</button>
-        </div>
         </form>
 
-</div>
- 
-<!--  <form method="post" action="removelikesong.php">
-                <div class = "row">
-                    <div class="form-group" >
-                        <input type="hidden" name="SName">
-                    </div>
-                    <button type="submit" class="btn btn-danger">Dislike</button>
-                </div>
-            </form> -->
+    </div>
 
-<!--  <h3 class="margin">Not found?</h3>
-    <p><big>Tell us what you like:</big></p>
-        <form method="post" action="userlike.php">  
-        <div class = "margin"> 
-            <div class="form-group" >
-                <input name = "SName" type="text" class="form-control" >
+    <!--  <form method="post" action="removelikesong.php">
+                    <div class = "row">
+                        <div class="form-group" >
+                            <input type="hidden" name="SName">
+                        </div>
+                        <button type="submit" class="btn btn-danger">Dislike</button>
+                    </div>
+                </form> -->
+
+    <!--  <h3 class="margin">Not found?</h3>
+        <p><big>Tell us what you like:</big></p>
+            <form method="post" action="userlike.php">
+            <div class = "margin">
+                <div class="form-group" >
+                    <input name = "SName" type="text" class="form-control" >
+                </div>
+                <button class="btn btn-default" name="submit" type="submit">Like :)</button>
             </div>
-            <button class="btn btn-default" name="submit" type="submit">Like :)</button>
-        </div>
-        </form> -->
-<!-- 
-<form method="post" action="removelikesong.php">
-                <div class = "row">
-                    <div class="form-group" >
-                        <input type="hidden" name="SName" \
-                    </div>
-                    <button type="submit" class="btn btn-danger">Dislike</button>
-                </div>
             </form> -->
+    <!--
+    <form method="post" action="removelikesong.php">
+                    <div class = "row">
+                        <div class="form-group" >
+                            <input type="hidden" name="SName" \
+                        </div>
+                        <button type="submit" class="btn btn-danger">Dislike</button>
+                    </div>
+                </form> -->
 
-</body>
+    </body>
 
 </div>
 
 </html>
-
-
-
-
-
-
-
-
