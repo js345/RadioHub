@@ -1,5 +1,6 @@
 <?php
 session_start();
+/*
 function allSongs(){
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
     $db_user = "csprojec_admin"; // change to your database password
@@ -41,6 +42,45 @@ function allSongs(){
     $conn->close();
     return $arrayofrows;
 }
+*/
+
+
+
+function recommendSongs($num) {
+    $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
+    $db_user = "csprojec_admin"; // change to your database password
+    $db_password = "admin"; // change to your database password
+    $database = "csprojec_radiohub"; // provide your database name
+    $db_table = "Song"; // your database table name
+    $conn = new mysqli($hostname, $db_user, $db_password, $database);
+
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if (isset($_SESSION['login_user'])) {
+        $temp = $_SESSION['login_user'];
+    }
+
+    $sql = "SELECT DISTINCT Song.SName FROM Song JOIN Likes on Song.SName = Likes.Rname JOIN User on User.Preference = Song.Genre WHERE Likes.Username <>'$temp'";
+
+    $result = $conn->query($sql);
+    $arrayofrows = array();
+    $count = 0;
+    while($row = mysqli_fetch_array($result))
+    {
+        $arrayofrows[$count] = $row;
+        $count++;
+    }
+  
+    $conn->close();
+    if ($num <= $count) {
+        return $arrayofrows[$num]['SName'];
+    }
+}
+
+
 ?>
 
 <html>
@@ -152,6 +192,63 @@ function allSongs(){
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
     <h3 class="margin">Recommended Song:</h3><br>
+    <div class="row">
+        <div class="col-sm-4">
+            <p>
+                <?php
+                    $dislike1 = recommendSongs(0);
+                    echo $dislike1;
+                ?>
+            </p>
+            <form method="post" action="userlike.php">
+                <div class = "row">
+                    <div class="form-group" >
+                        <input type="hidden" name="SName" value= <?php echo "'{$dislike1}'" ?> >
+                    </div>
+                    <button type="submit" class="btn btn-danger">Like</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-sm-4">
+            <p>
+                <?php
+                    $dislike2 = recommendSongs(1);
+                    echo $dislike2;
+                ?>
+            </p>
+            <form method="post" action="userlike.php">
+                <div class = "row">
+                    <div class="form-group" >
+                        <input type="hidden" name="SName" value= <?php echo "'{$dislike2}'" ?> >
+                    </div>
+                    <button type="submit" class="btn btn-danger">Like</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <p>
+                <?php
+                    $dislike3 = recommendSongs(2);
+                    echo $dislike3;
+                ?>
+            </p>
+            <form method="post" action="userlike.php">
+                <div class = "row">
+                    <div class="form-group" >
+                        <input type="hidden" name="SName" value= <?php echo "'{$dislike3}'" ?> >
+                    </div>
+                    <button type="submit" class="btn btn-danger">Like</button>
+                </div>
+            </form>
+            <!-- img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image" -->
+        </div>
+    </div>
+
+
+
+
+
 
 </div>
 
@@ -181,7 +278,7 @@ function allSongs(){
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script>
   $(function() {
-    var availableTags = allSongs();
+    //var availableTags = allSongs();
     // var availableTags = [
     //   "ActionScript",
     //   "AppleScript",
@@ -206,9 +303,9 @@ function allSongs(){
     //   "Scala",
     //   "Scheme"
     // ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
+    //$( "#tags" ).autocomplete({
+    //  source: availableTags
+   // });
   });
   </script>
 </head>
