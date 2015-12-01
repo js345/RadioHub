@@ -38,8 +38,10 @@ function allSongs(){
 }
 
 
-
-
+/**
+ * @param $num
+ * @return mixed
+ */
 function recommendSongs($num) {
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
     $db_user = "csprojec_admin"; // change to your database password
@@ -56,8 +58,18 @@ function recommendSongs($num) {
     if (isset($_SESSION['login_user'])) {
         $temp = $_SESSION['login_user'];
     }
+    $sql = "SELECT Preference FROM User WHERE Username= '$temp'";
 
-    $sql = "SELECT DISTINCT Song.SName FROM Song JOIN Likes on Song.SName = Likes.Rname JOIN User on User.Preference = Song.Genre AND User.Username <> '$temp'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $preference = $row["Preference"];
+        }
+    }
+
+    $sql = "SELECT DISTINCT Song.SName FROM Song JOIN Likes JOIN User WHERE Song.SName = Likes.Rname AND Likes.Username = User.Username AND User.preference = '$preference' AND Song.SName NOT IN (SELECT Rname From Likes WHERE Username = '$temp')";
 
     $result = $conn->query($sql);
     $arrayofrows = array();

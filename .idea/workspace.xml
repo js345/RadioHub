@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9b912981-48e1-44ce-91ba-d58a2f1b0104" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/changePreference.php" afterPath="$PROJECT_DIR$/public_html/changePreference.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RadioHub.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,12 +27,31 @@
       <file leaf-file-name="changePreference.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/changePreference.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8130081">
-              <caret line="59" column="158" selection-start-line="59" selection-start-column="158" selection-end-line="59" selection-end-column="158" />
+            <state vertical-scroll-proportion="0.6910569">
+              <caret line="71" column="242" selection-start-line="71" selection-start-column="242" selection-end-line="71" selection-end-column="242" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1448935902000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
-                <marker date="1448935902000" expanded="true" signature="1909:2055" placeholder="SELECT DISTI..Song..." />
+                <marker date="1448937238000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
+                <marker date="1448937238000" expanded="true" signature="1946:1997" placeholder="SELECT Prefe..User..." />
+                <marker date="1448937238000" expanded="true" signature="2226:2283" placeholder="SELECT DISTI..Song..." />
+                <marker date="1448937238000" expanded="true" signature="2226:2290" placeholder="SELECT DISTI..Song..." />
+                <marker date="1448937238000" expanded="true" signature="2226:2302" placeholder="SELECT DISTI..Song..." />
+                <marker date="1448937238000" expanded="true" signature="2226:2334" placeholder="SELECT DISTI..Song..." />
+                <marker date="1448937238000" expanded="true" signature="2226:2385" placeholder="SELECT DISTI..Song..." />
+                <marker date="1448937238000" expanded="true" signature="2226:2458" placeholder="SELECT DISTI..Song..." />
+                <marker date="1448937238000" expanded="true" signature="2409:2457" placeholder="SELECT Rname..Likes..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showpreference.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/showpreference.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.375">
+              <caret line="31" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding>
+                <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
               </folding>
             </state>
           </provider>
@@ -251,7 +269,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
           </folding>
         </state>
       </provider>
@@ -272,8 +290,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1448935902000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
-            <marker date="1448935902000" expanded="true" signature="1909:2055" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
+            <marker date="1448937238000" expanded="true" signature="1946:1997" placeholder="SELECT Prefe..User..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2283" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2290" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2302" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2334" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2385" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2458" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2409:2457" placeholder="SELECT Rname..Likes..." />
           </folding>
         </state>
       </provider>
@@ -293,7 +318,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
           </folding>
         </state>
       </provider>
@@ -314,8 +339,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1448935902000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
-            <marker date="1448935902000" expanded="true" signature="1909:2055" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
+            <marker date="1448937238000" expanded="true" signature="1946:1997" placeholder="SELECT Prefe..User..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2283" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2290" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2302" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2334" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2385" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2458" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2409:2457" placeholder="SELECT Rname..Likes..." />
           </folding>
         </state>
       </provider>
@@ -335,7 +367,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
           </folding>
         </state>
       </provider>
@@ -356,8 +388,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1448935902000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
-            <marker date="1448935902000" expanded="true" signature="1909:2055" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
+            <marker date="1448937238000" expanded="true" signature="1946:1997" placeholder="SELECT Prefe..User..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2283" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2290" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2302" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2334" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2385" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2458" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2409:2457" placeholder="SELECT Rname..Likes..." />
           </folding>
         </state>
       </provider>
@@ -367,7 +406,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
           </folding>
         </state>
       </provider>
@@ -443,7 +482,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
           </folding>
         </state>
       </provider>
@@ -477,7 +516,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
           <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
           </folding>
         </state>
       </provider>
@@ -511,7 +550,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="2" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
           <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
           </folding>
         </state>
       </provider>
@@ -648,16 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/showpreference.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6504065">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <marker date="1448488643000" expanded="true" signature="-1:-1" placeholder="SELECT Prefe..User..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/addpreference.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42682928">
@@ -668,14 +697,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/showpreference.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.375">
+          <caret line="31" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <marker date="1448488643000" expanded="true" signature="572:623" placeholder="SELECT Prefe..User..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/changePreference.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8130081">
-          <caret line="59" column="158" selection-start-line="59" selection-start-column="158" selection-end-line="59" selection-end-column="158" />
+        <state vertical-scroll-proportion="0.6910569">
+          <caret line="71" column="242" selection-start-line="71" selection-start-column="242" selection-end-line="71" selection-end-column="242" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1448935902000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
-            <marker date="1448935902000" expanded="true" signature="1909:2055" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="708:798" placeholder="SELECT Song...Song..." />
+            <marker date="1448937238000" expanded="true" signature="1946:1997" placeholder="SELECT Prefe..User..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2283" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2290" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2302" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2334" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2385" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2226:2458" placeholder="SELECT DISTI..Song..." />
+            <marker date="1448937238000" expanded="true" signature="2409:2457" placeholder="SELECT Rname..Likes..." />
           </folding>
         </state>
       </provider>
