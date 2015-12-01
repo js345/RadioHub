@@ -57,7 +57,7 @@ function recommendSongs($num) {
         $temp = $_SESSION['login_user'];
     }
 
-    $sql = "SELECT DISTINCT Song.SName FROM Song JOIN Likes on Song.SName = Likes.Rname JOIN User on User.Preference = Song.Genre WHERE Likes.Username <>'$temp'";
+    $sql = "SELECT DISTINCT Song.SName FROM Song JOIN Likes on Song.SName = Likes.Rname JOIN User on User.Preference = Song.Genre AND User.Username <> '$temp'";
 
     $result = $conn->query($sql);
     $arrayofrows = array();
