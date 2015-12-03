@@ -12,11 +12,12 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-//if (isset($_SESSION['login_user'])){
-//	$temp =  $_SESSION['login_user'];
-//}
+if (isset($_SESSION['login_user'])){
+	$temp =  $_SESSION['login_user'];
+}
 
-$sql = "SELECT Song.SName FROM Song WHERE Song.SName LIKE '%%".$song_key."%%' AND Song.ArtName LIKE '%%".$artist_key."%%' AND Song.Genre LIKE '%%".$genre."%%'";
+//$sql = "SELECT Song.SName FROM Song WHERE Song.SName LIKE '%%".$song_key."%%' AND Song.ArtName LIKE '%%".$artist_key."%%' AND Song.Genre LIKE '%%".$genre."%%'";
+$sql = "SELECT DISTINCT Song.SName FROM Song WHERE Song.SName NOT IN (SELECT RName FROM Likes WHERE Username = '$temp')";
 
 $result = $conn->query($sql);
 
@@ -36,9 +37,14 @@ $result = $conn->query($sql);
 	    while($row = $result->fetch_assoc()) {
         	
         	//->getElementById("results");
-        	$new_div = $dom->createElement("div", $row['SName']);
-        	$button = $dom->createElement("button", "Like");
+        	$new_div = $dom->createElement("div", $row['SName']." ");
+        	$button = $dom->createElement("a", "Like");
+        	$button->setAttribute("class", "button");
+        	$button->setAttribute("href", "likesong.php?argument1=".$row['SName']);
         	$new_div->appendChild($button);
+        	
+
+        	//<button class="btn btn-default" name="submit" type="submit">Search</button>
         	//$div->div = $row['SName'];
 			// We insert the new element as root (child of the document)
 			$results->appendChild($new_div);
