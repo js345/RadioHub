@@ -1,42 +1,40 @@
 <?php
 session_start();
-function allSongs(){
+//new function
+function getlist() {
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
     $db_user = "csprojec_admin"; // change to your database password
     $db_password = "admin"; // change to your database password
     $database = "csprojec_radiohub"; // provide your database name
     $db_table = "User"; // your database table name
     $conn = new mysqli($hostname, $db_user, $db_password, $database);
+
+
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+
     if (isset($_SESSION['login_user'])) {
         $temp = $_SESSION['login_user'];
     }
-    // $sql = "SELECT RName FROM Likes WHERE Username= '$temp'";
-    $sql = "SELECT Song.SName FROM Song, User WHERE Username= '$temp' AND User.Preference = Song.Genre";
+    $sql = "SELECT SName FROM Song";
+
     $result = $conn->query($sql);
     $arrayofrows = array();
-    $count = 0;
-    while($row = mysqli_fetch_array($result))
-    {
-        $arrayofrows[$count] = $row;
-        $count++;
-    }
 
     if ($result->num_rows > 0) {
         // output data of each row
-        while ($row = $result->fetch_assoc()) {
-            echo $row['RName'];
-            //echo "<br>";
+        while($row = $result->fetch_assoc()) {
+            array_push($arrayofrows ,$row['SName']);
         }
     } else {
         echo "0 results";
     }
     $conn->close();
-    return $arrayofrows;
-}
 
+    return $arrayofrows;
+    
+}
 
 /**
  * @param $num
@@ -258,61 +256,35 @@ function recommendSongs($num) {
 
 </div>
 
-
-<!-- Third Container (Grid) -->
-<!-- <div class="container-fluid bg-3 text-center">
-    <h3 class="margin">Not found?</h3>
-    <p><big>Tell us what you like:</big></p>
-        <form method="post" action="userlike.php">  
-        <div class = "margin"> 
-            <div class="form-group" >
-                <input name = "SName" type="text" class="form-control" >
-            </div>
-            <button class="btn btn-default" name="submit" type="submit">Like :)</button>
-        </div>
-        </form>
-</div> -->
-
-
 <div class="container-fluid bg-3 text-center">
-    <head>
+   <head>
         <meta charset="utf-8">
         <title>jQuery UI Autocomplete - Default functionality</title>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css">
+        <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+        <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+       <!--  // <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+        <script src="//code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <script>
             $(function() {
-                var availableTags = allSongs();
-                // var availableTags = [
-                //   "ActionScript",
-                //   "AppleScript",
-                //   "Asp",
-                //   "BASIC",
-                //   "C",
-                //   "C++",
-                //   "Clojure",
-                //   "COBOL",
-                //   "ColdFusion",
-                //   "Erlang",
-                //   "Fortran",
-                //   "Groovy",
-                //   "Haskell",
-                //   "Java",
-                //   "JavaScript",
-                //   "Lisp",
-                //   "Perl",
-                //   "PHP",
-                //   "Python",
-                //   "Ruby",
-                //   "Scala",
-                //   "Scheme"
-                // ];
+                //console.log("hey");
+                var obj = '<?php echo json_encode(getlist()); ?>';
+                var items = JSON.parse(obj);
+                var availableTags = items;
                 $( "#tags" ).autocomplete({
                     source: availableTags
                 });
             });
+            $(document).ready(function () {
+            $('#tags').on('change', function () {
+                $('#tagsname').html('You selected: ' + this.value);
+            }).change();
+            $('#tags').on('autocompleteselect', function (e, ui) {
+                $('#tagsname').html('You selected: ' + ui.item.value);
+                var songname = ui.item.value;
+                $('#id1').val(songname);
+            });
+        });
         </script>
     </head>
     <body>
@@ -323,48 +295,18 @@ function recommendSongs($num) {
     <div class="ui-widget">
         <!-- <label for="tags">Tags: </label> -->
         <input id="tags">
+        <div id="tagsname"></div>
         <form method="post" action="userlike.php">
             <div class = "margin">
                 <div class="form-group" >
-                    <input type = "hidden" name = "SName" type="text" class="form-control" >
+                    <input type="hidden" name="SName" value= "" id = "id1">
                 </div>
                 <button class="btn btn-default" name="submit" type="submit">Like :)</button>
+
             </div>
         </form>
 
     </div>
 
-    <!--  <form method="post" action="removelikesong.php">
-                    <div class = "row">
-                        <div class="form-group" >
-                            <input type="hidden" name="SName">
-                        </div>
-                        <button type="submit" class="btn btn-danger">Dislike</button>
-                    </div>
-                </form> -->
-
-    <!--  <h3 class="margin">Not found?</h3>
-        <p><big>Tell us what you like:</big></p>
-            <form method="post" action="userlike.php">
-            <div class = "margin">
-                <div class="form-group" >
-                    <input name = "SName" type="text" class="form-control" >
-                </div>
-                <button class="btn btn-default" name="submit" type="submit">Like :)</button>
-            </div>
-            </form> -->
-    <!--
-    <form method="post" action="removelikesong.php">
-                    <div class = "row">
-                        <div class="form-group" >
-                            <input type="hidden" name="SName" \
-                        </div>
-                        <button type="submit" class="btn btn-danger">Dislike</button>
-                    </div>
-                </form> -->
-
     </body>
-
-</div>
-
 </html>
