@@ -17,7 +17,9 @@ function getlist() {
     if (isset($_SESSION['login_user'])) {
         $temp = $_SESSION['login_user'];
     }
-    $sql = "SELECT SName FROM Song";
+    // $sql = "SELECT SName FROM Song";
+
+    $sql = "SELECT Song.SName FROM Song WHERE Song.SName NOT IN (SELECT Likes.Rname FROM Likes WHERE Likes.Username= '$temp')";
 
     $result = $conn->query($sql);
     $arrayofrows = array();
