@@ -10,7 +10,6 @@ $database = "csprojec_radiohub"; // provide your database name
 $db_table = "User"; // your database table name
 $conn = mysqli_connect($hostname, $db_user,$db_password, $database);
 $preference = $_POST['preference'];
-echo $preference;
 if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }

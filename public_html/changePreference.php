@@ -172,21 +172,21 @@ function recommendSongs($num) {
     </h3>
     <h2 class="margin">Change Your Preference</h2>
     <div class="container">
-        <form action="addpreference.php" method="post">
+        <form name="addPreference" id="addPreference" action="addpreference.php" method="post">
             <div class="btn-group dropdown" style="text-align-all: center">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" value="country"><?php include 'showpreference.php';?>
+                <input class="span2" id="preference" name="preference" type="hidden">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php include 'showpreference.php';?>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu" id="preference" name="preference">
-                    <li value="Blues"><a href=" ">Blues</a ></li>
-                    <li value="Classical"><a href="#">Classical</a ></li>
-                    <li value="Country"><a href="#">Country</a ></li>
-                    <li value="Jazz"><a href="#">Jazz</a ></li>
-                    <li value="Pop"><a href="#">Pop</a ></li>
-                    <li value="Rock"><a href="#">Rock</a ></li>
-                    <li value="Holiday"><a href="#">Holiday</a ></li>
+                    <li onclick="$('#preference').val('Blues'); $('#addPreference').submit()"><a>Blues</a ></li>
+                    <li onclick="$('#preference').val('Classical'); $('#addPreference').submit()"><a>Classical</a ></li>
+                    <li onclick="$('#preference').val('Country'); $('#addPreference').submit()"><a>Country</a ></li>
+                    <li onclick="$('#preference').val('Jazz'); $('#addPreference').submit()"><a>Jazz</a ></li>
+                    <li onclick="$('#preference').val('Pop'); $('#addPreference').submit()"><a>Pop</a ></li>
+                    <li onclick="$('#preference').val('Rock'); $('#addPreference').submit()"><a>Rock</a ></li>
+                    <li onclick="$('#preference').val('Holiday'); $('#addPreference').submit()"><a>Holiday</a ></li>
                 </ul>
             </div>
-            <input name="preference" type="submit">
         </form>
     </div>
 </div>
