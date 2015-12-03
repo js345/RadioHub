@@ -24,6 +24,4 @@ if (isset($_SESSION['login_user'])){
 	echo "Error: ".  mysqli_error($conn);
 }
 	mysql_close($connection); // Closing Connection
-	
-
 ?>
