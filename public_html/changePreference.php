@@ -178,13 +178,13 @@ function recommendSongs($num) {
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><?php include 'showpreference.php';?>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu" id="preference" name="preference">
-                    <li onclick="$('#preference').val('Blues'); $('#addPreference').submit()"><a>Blues</a ></li>
-                    <li onclick="$('#preference').val('Classical'); $('#addPreference').submit()"><a>Classical</a ></li>
-                    <li onclick="$('#preference').val('Country'); $('#addPreference').submit()"><a>Country</a ></li>
-                    <li onclick="$('#preference').val('Jazz'); $('#addPreference').submit()"><a>Jazz</a ></li>
-                    <li onclick="$('#preference').val('Pop'); $('#addPreference').submit()"><a>Pop</a ></li>
-                    <li onclick="$('#preference').val('Rock'); $('#addPreference').submit()"><a>Rock</a ></li>
-                    <li onclick="$('#preference').val('Holiday'); $('#addPreference').submit()"><a>Holiday</a ></li>
+                    <li onclick="$('#preference').val('Blues'); $('#addPreference').submit()"><a href="#">Blues</a ></li>
+                    <li onclick="$('#preference').val('Classical'); $('#addPreference').submit()"><a href="#">Classical</a ></li>
+                    <li onclick="$('#preference').val('Country'); $('#addPreference').submit()"><a href="#">Country</a ></li>
+                    <li onclick="$('#preference').val('Jazz'); $('#addPreference').submit()"><a href="#">Jazz</a ></li>
+                    <li onclick="$('#preference').val('Pop'); $('#addPreference').submit()"><a href="#">Pop</a ></li>
+                    <li onclick="$('#preference').val('Rock'); $('#addPreference').submit()"><a href="#">Rock</a ></li>
+                    <li onclick="$('#preference').val('Holiday'); $('#addPreference').submit()"><a href="#">Holiday</a ></li>
                 </ul>
             </div>
         </form>
