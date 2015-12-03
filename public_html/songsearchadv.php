@@ -22,13 +22,42 @@ $result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
+	    $dom = new DOMDocument();
+	    $dom->validateOnParse = true; //<!-- this first
+
+        	//echo $dom->load("songsearch.php");
+        libxml_use_internal_errors(true);
+        $dom->loadHTMLFile("songsearch.php");
+        libxml_use_internal_errors(false);
+		$dom->preserveWhiteSpace = false;
+		$results = $dom->getElementById("results");
+		$results->nodeValue = "Search Results:";
+	    
 	    while($row = $result->fetch_assoc()) {
-	       	echo $row['SName'];
+        	
+        	//->getElementById("results");
+        	$new_div = $dom->createElement("div", $row['SName']);
+        	$button = $dom->createElement("button", "Like");
+        	$new_div->appendChild($button);
+        	//$div->div = $row['SName'];
+			// We insert the new element as root (child of the document)
+			$results->appendChild($new_div);
+
+	       	//echo $row['SName'];
 	        //<button class="btn btn-default" name="submit" type="submit">Add</button>
-	        echo "<br>";
+	        //echo "<br>";
 	    }
+	    $nav = $dom->getElementById("navbar");
+	    $nav->parentNode->removeChild($nav);
+	    $srch = $dom->getElementById("searchsection");
+		$srch->parentNode->removeChild($srch);
+	    echo $dom->saveHTML();
 	} else {
 	    echo "0 results";
+	    echo "<br>";
+	    echo "fetching more songs from internet...";
+
+
 	}
 
 

@@ -4,7 +4,6 @@ $song_key = $_POST['song'];
 $artist_key = $_POST['artist'];
 $genre = $_POST['genre'];
 ?>
-
 <html>
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
@@ -60,7 +59,7 @@ $genre = $_POST['genre'];
 <body>
 
 <!-- Navbar -->
-	<nav class="navbar navbar-default">
+	<nav id="navbar" class="navbar navbar-default">
 	    <div class="container">
 	        <div class="navbar-header">
 	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -82,7 +81,7 @@ $genre = $_POST['genre'];
 </body>
 
 
-<div class="container-fluid bg-1 text-center">
+<div id = "searchsection" class="container-fluid bg-1 text-center">
     <h2 class="margin">Advanced Search:</h2>
     <form method="post" action="songsearch.php">	
 		<div class = "row">	
@@ -96,11 +95,10 @@ $genre = $_POST['genre'];
 		</div>	
 		
 	</form>
-
-<div id = "results">
-    Search Results: </br></br>
-    <?php include 'songsearchadv.php';?>
 </div>
+<div id = "results" class="container-fluid bg-1 text-center">
+    
+    <?php include 'songsearchadv.php';?>
 </div>
 
 </html>
