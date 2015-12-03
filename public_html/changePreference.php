@@ -157,7 +157,7 @@ function recommendSongs($num) {
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="changePreference.php">Change Preference</a></li>
-                <li><a href="#">Search Songs</a></li>
+                <li><a href="songsearch.php">Search Songs</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </div>
