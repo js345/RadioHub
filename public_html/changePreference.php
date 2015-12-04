@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 //new function
 function getlist() {
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
@@ -57,19 +58,71 @@ function recommendSongs($num) {
     }
     $sql = "SELECT Song.SName, Song.Ranking FROM Song WHERE Song.Genre = '$preference' AND Song.SName NOT IN (SELECT Likes.Rname FROM Likes WHERE Likes.Username= '$temp') ORDER BY Song.Ranking DESC";
     $result = $conn->query($sql);
+    if ($result->num_rows <= 0) {
+        $sql = "SELECT DISTINCT Song.SName, Song.Ranking FROM Song JOIN Likes JOIN User WHERE Song.SName = Likes.Rname AND Likes.Username = User.Username AND User.preference = '$preference' AND Song.SName NOT IN (SELECT Rname From Likes WHERE Username = '$temp') ORDER BY Song.Ranking DESC";
+        $result = $conn->query($sql);
+    }
     $arrayofrows = array();
+    $arrayoflikes = array();
     $count = 0;
     while($row = mysqli_fetch_array($result))
     {
-        $arrayofrows[$count] = $row;
+        $arrayofrows[$count] = $row['SName'];
+        $sql2 = "SELECT COUNT(Likes.Rname) FROM Likes WHERE Likes.Rname = '$arrayofrows[$count]'";
+        $result2 = $conn->query($sql2);
+        $arrayoflikes[$count] = mysqli_fetch_array($result2);
         $count++;
     }
-  
+
     $conn->close();
     if ($num <= $count) {
-        return $arrayofrows[$num]['SName'];
+        return $arrayofrows[$num];
     }
 }
+
+function recommendByBehavior($arrayoflikes) {
+    $user1 = $arrayoflikes[0];
+    $user2 = $arrayoflikes[1];
+    $sharedItem = array();
+    $pref1 = array();
+    $pref2 = array();
+
+    $result1 = $user1->fetchAllPreferences();
+    $result2 = $user2->fetchAllPreferences();
+
+    foreach($result1 as $pref){
+        $pref1[$pref->item_id] = $pref->rate;
+    }
+
+    foreach($result2 as $pref){
+        $pref2[$pref->item_id] = $pref->rate;
+    }
+
+    foreach ($pref1 as $item => $preferenza){
+        if(key_exists($item,$pref2)){
+            $sharedItem[$item] = 1;
+        }
+    }
+
+    $n = count($sharedItem);
+    if ($n == 0) return 0;
+
+    $sum1 = 0;$sum2 = 0;$sumSq1 = 0;$sumSq2 = 0;$pSum = 0;
+
+    foreach ($sharedItem as $item_id => $pre) {
+        $sum1 += $pref1[$item_id];
+        $sum2 += $pref2[$item_id];
+
+        $sumSq1 += pow($pref1[$item_id],2);
+        $sumSq2 += pow($pref2[$item_id],2);
+
+        $pSum += $pref1[$item_id] * $pref2[$item_id];
+    }
+
+    $num = $pSum - (($sum1 * $sum2) / $n);
+    $den = sqrt(($sumSq1 - pow($sum1,2)/$n) * ($sumSq2 - pow($sum2,2)/$n));
+}
+
 function showPreview($num) {
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
     $db_user = "csprojec_admin"; // change to your database password
