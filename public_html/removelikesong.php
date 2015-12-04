@@ -15,6 +15,10 @@ if (isset($_SESSION['login_user'])){
 }
 $sql = "DELETE FROM Likes WHERE Username = '$temp' AND RName = '$SName'";
 $query = mysqli_query($conn, $sql);
+
+$sql = "UPDATE Song SET Song.Ranking = Song.Ranking - 1 WHERE SName = '$SName'";
+
+$query = mysqli_query($conn, $sql);
 if($query) {
 	header("location: profile.php"); 
 	//echo "Thanks for signing up"; 
