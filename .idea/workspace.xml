@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b912981-48e1-44ce-91ba-d58a2f1b0104" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/profile.php" afterPath="$PROJECT_DIR$/public_html/profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/index.html" afterPath="$PROJECT_DIR$/public_html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RadioHub.iws" />
@@ -28,16 +28,9 @@
       <file leaf-file-name="changePreference.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/changePreference.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="115" column="5" selection-start-line="110" selection-start-column="4" selection-end-line="115" selection-end-column="5" />
-              <folding>
-                <marker date="1449201289000" expanded="true" signature="702:815" placeholder="SELECT Song...Song..." />
-                <marker date="1449201289000" expanded="true" signature="755:814" placeholder="SELECT Likes..Likes..." />
-                <marker date="1449201289000" expanded="true" signature="1833:1884" placeholder="SELECT Prefe..User..." />
-                <marker date="1449201289000" expanded="true" signature="2113:2345" placeholder="SELECT DISTI..Song..." />
-                <marker date="1449201289000" expanded="true" signature="2296:2344" placeholder="SELECT Rname..Likes..." />
-                <marker date="1449201289000" expanded="true" signature="3309:3352" placeholder="SELECT URL F..Song..." />
-              </folding>
+            <state vertical-scroll-proportion="2.5">
+              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,18 +88,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49323016">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="99" column="37" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="37" />
               <folding>
-                <marker date="1449201522000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
-                <marker date="1449201522000" expanded="true" signature="1626:1673" placeholder="SELECT RName..Likes..." />
-                <marker date="1449201522000" expanded="true" signature="1958:2001" placeholder="SELECT URL F..Song..." />
-                <marker date="1449201522000" expanded="true" signature="6085:6218" placeholder="..." />
-                <marker date="1449201522000" expanded="true" signature="6742:6875" placeholder="..." />
+                <marker date="1449202480000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
+                <marker date="1449202480000" expanded="true" signature="1626:1673" placeholder="SELECT RName..Likes..." />
+                <marker date="1449202480000" expanded="true" signature="1958:2001" placeholder="SELECT URL F..Song..." />
+                <marker date="1449202480000" expanded="true" signature="6085:6218" placeholder="..." />
+                <marker date="1449202480000" expanded="true" signature="6742:6875" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup_process.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/signup_process.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.25">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <marker date="1449110697000" expanded="true" signature="528:595" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="afterlogin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public_html/afterlogin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.6827853">
+              <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,7 +158,6 @@
         <option value="$PROJECT_DIR$/stop.sh" />
         <option value="$PROJECT_DIR$/public_html/afterlogin.php" />
         <option value="$PROJECT_DIR$/public_html/showpreference.php" />
-        <option value="$PROJECT_DIR$/public_html/index.html" />
         <option value="$PROJECT_DIR$/public_html/profile.html" />
         <option value="$PROJECT_DIR$/public_html/login_process.php" />
         <option value="$PROJECT_DIR$/public_html/signup.html" />
@@ -158,6 +172,7 @@
         <option value="$PROJECT_DIR$/public_html/likesong.php" />
         <option value="$PROJECT_DIR$/public_html/changePreference.php" />
         <option value="$PROJECT_DIR$/public_html/profile.php" />
+        <option value="$PROJECT_DIR$/public_html/index.html" />
       </list>
     </option>
   </component>
@@ -372,14 +387,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1449201289000" expanded="true" signature="702:815" placeholder="SELECT Song...Song..." />
-            <marker date="1449201289000" expanded="true" signature="755:814" placeholder="SELECT Likes..Likes..." />
-            <marker date="1449201289000" expanded="true" signature="1833:1884" placeholder="SELECT Prefe..User..." />
-            <marker date="1449201289000" expanded="true" signature="2113:2345" placeholder="SELECT DISTI..Song..." />
-            <marker date="1449201289000" expanded="true" signature="2296:2344" placeholder="SELECT Rname..Likes..." />
-            <marker date="1449201289000" expanded="true" signature="3309:3352" placeholder="SELECT URL F..Song..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -388,11 +396,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1449201522000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
-            <marker date="1449201522000" expanded="true" signature="1626:1673" placeholder="SELECT RName..Likes..." />
-            <marker date="1449201522000" expanded="true" signature="1958:2001" placeholder="SELECT URL F..Song..." />
-            <marker date="1449201522000" expanded="true" signature="6085:6218" placeholder="..." />
-            <marker date="1449201522000" expanded="true" signature="6742:6875" placeholder="..." />
+            <marker date="1449202480000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
+            <marker date="1449202480000" expanded="true" signature="1626:1673" placeholder="SELECT RName..Likes..." />
+            <marker date="1449202480000" expanded="true" signature="1958:2001" placeholder="SELECT URL F..Song..." />
+            <marker date="1449202480000" expanded="true" signature="6085:6218" placeholder="..." />
+            <marker date="1449202480000" expanded="true" signature="6742:6875" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -421,14 +429,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1449201289000" expanded="true" signature="702:815" placeholder="SELECT Song...Song..." />
-            <marker date="1449201289000" expanded="true" signature="755:814" placeholder="SELECT Likes..Likes..." />
-            <marker date="1449201289000" expanded="true" signature="1833:1884" placeholder="SELECT Prefe..User..." />
-            <marker date="1449201289000" expanded="true" signature="2113:2345" placeholder="SELECT DISTI..Song..." />
-            <marker date="1449201289000" expanded="true" signature="2296:2344" placeholder="SELECT Rname..Likes..." />
-            <marker date="1449201289000" expanded="true" signature="3309:3352" placeholder="SELECT URL F..Song..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -645,20 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/aftersignup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/likelist.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -677,13 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5">
           <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/afterlogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -708,13 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.39534885">
           <caret line="1" column="78" selection-start-line="1" selection-start-column="77" selection-end-line="1" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/signup_process.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5813953">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -776,30 +749,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/changePreference.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="115" column="5" selection-start-line="110" selection-start-column="4" selection-end-line="115" selection-end-column="5" />
-          <folding>
-            <marker date="1449201289000" expanded="true" signature="702:815" placeholder="SELECT Song...Song..." />
-            <marker date="1449201289000" expanded="true" signature="755:814" placeholder="SELECT Likes..Likes..." />
-            <marker date="1449201289000" expanded="true" signature="1833:1884" placeholder="SELECT Prefe..User..." />
-            <marker date="1449201289000" expanded="true" signature="2113:2345" placeholder="SELECT DISTI..Song..." />
-            <marker date="1449201289000" expanded="true" signature="2296:2344" placeholder="SELECT Rname..Likes..." />
-            <marker date="1449201289000" expanded="true" signature="3309:3352" placeholder="SELECT URL F..Song..." />
-          </folding>
+        <state vertical-scroll-proportion="2.5">
+          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49323016">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="99" column="37" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="37" />
           <folding>
-            <marker date="1449201522000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
-            <marker date="1449201522000" expanded="true" signature="1626:1673" placeholder="SELECT RName..Likes..." />
-            <marker date="1449201522000" expanded="true" signature="1958:2001" placeholder="SELECT URL F..Song..." />
-            <marker date="1449201522000" expanded="true" signature="6085:6218" placeholder="..." />
-            <marker date="1449201522000" expanded="true" signature="6742:6875" placeholder="..." />
+            <marker date="1449202480000" expanded="true" signature="653:700" placeholder="SELECT RName..Likes..." />
+            <marker date="1449202480000" expanded="true" signature="1626:1673" placeholder="SELECT RName..Likes..." />
+            <marker date="1449202480000" expanded="true" signature="1958:2001" placeholder="SELECT URL F..Song..." />
+            <marker date="1449202480000" expanded="true" signature="6085:6218" placeholder="..." />
+            <marker date="1449202480000" expanded="true" signature="6742:6875" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.68085104">
+          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/aftersignup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/signup_process.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <marker date="1449110697000" expanded="true" signature="528:595" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/afterlogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6827853">
+          <caret line="17" column="9" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
