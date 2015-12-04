@@ -75,7 +75,7 @@ function showPreview($num) {
     }
 
 
-    }
+}
 ?>
 
 
