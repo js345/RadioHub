@@ -1,4 +1,12 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: xiaofo
+ * Date: 12/3/15
+ * Time: 23:56
+ */
+?>
+<?php
 session_start();
 function showSongs($num) {
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
@@ -79,7 +87,7 @@ function showPreview($num) {
 ?>
 
 
-<html>       
+<html>
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>RadioHub</title>
@@ -92,8 +100,8 @@ function showPreview($num) {
 
 
     <script type="text/javascript">$( document ).ready(function() {
-    showMore();
-    });</script>
+            showMore();
+        });</script>
 
 
     <style>
@@ -176,65 +184,101 @@ function showPreview($num) {
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
-    <h3 class="margin">Your Favorite Songs</h3><br>
-    <div class="row">
-        <div class="col-sm-4">
-            <a href="<?php $preview1 = showPreview(0);
-                        echo $preview1; ?>">
-                <?php
-                    $like1 = showSongs(0);
-                    echo $like1;
-                ?>
-            </a>
-            <form method="post" action="removelikesong.php">
-                <div class = "row">
-                    <div class="form-group" >
-                        <input type="hidden" name="SName" value= <?php echo "'{$like1}'" ?> >
-                    </div>
-                    <button type="submit" class="btn btn-danger">Dislike</button>
-                </div>
-            </form>
+    <h3 class="margin">All Songs You Like</h3><br>
+    <?php
+    $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
+    $db_user = "csprojec_admin"; // change to your database password
+    $db_password = "admin"; // change to your database password
+    $database = "csprojec_radiohub"; // provide your database name
+    $db_table = "User"; // your database table name
+    $conn = new mysqli($hostname, $db_user, $db_password, $database);
 
-        </div>
-        <div class="col-sm-4">
-            <a href="<?php $preview2 = showPreview(1);
-            echo $preview2; ?>">
-                <?php
-                    $like2 = showSongs(1);
-                    echo $like2;
-                ?>
-            </a>
-            <form method="post" action="removelikesong.php">
-                <div class = "row">
-                    <div class="form-group" >
-                        <input type="hidden" name="SName" value= <?php echo "'{$like2}'" ?> >
-                    </div>
-                    <button type="submit" class="btn btn-danger">Dislike</button>
-                </div>
-            </form>
-        </div>
-        <div class="col-sm-4">
-            <a href="<?php $preview3 = showPreview(2);
-            echo $preview3; ?>">
-                <?php
-                    $like3 = showSongs(2);
-                    echo $like3;
-                ?>
-            </a>
-            <form method="post" action="removelikesong.php">
-                <div class = "row">
-                    <div class="form-group" >
-                        <input type="hidden" name="SName" value= <?php echo "'{$like3}'" ?> >
-                    </div>
-                    <button type="submit" class="btn btn-danger">Dislike</button>
-                </div>
-            </form>
-        </div>
 
-        <div class="row" id = "displaysongs">
-            <a href="alllikedsongs.php" >MORE SONGS</a><br>
-        </div>
-    </div>
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if (isset($_SESSION['login_user'])) {
+        $temp = $_SESSION['login_user'];
+    }
+    //echo $argv[1];
+    //$sql = "SELECT RName FROM Likes WHERE Username= '$temp'";
+
+    //$rname = $argv[1];
+
+    $sql = "SELECT RName FROM Likes WHERE Username = '$temp'";
+
+    $result = $conn->query($sql);
+    $arrayofrows = array();
+    $count = 0;
+    while ($row = $result->fetch_assoc())
+    {
+        $nameurl = array();
+        //array_push($arrayofrows, $row['RName']);
+        $SName = $row['RName'];
+        $sql = "SELECT URL FROM Song WHERE SName = '$SName'";
+        $preview = $conn->query($sql);
+        $ret = $preview->fetch_assoc();
+        array_push($nameurl,$row['RName']);
+        array_push($nameurl,$ret['URL']);
+        array_push($arrayofrows,$nameurl);
+        //$arrayofrows[$count] = $row;
+        $count++;
+    }
+    $conn->close();
+
+    $dom = new DOMDocument();
+    $dom->validateOnParse = true; //<!-- this first
+
+    //echo $dom->load("songsearch.php");
+    libxml_use_internal_errors(true);
+    $dom->loadHTML("<html></html>");
+    libxml_use_internal_errors(false);
+    $dom->preserveWhiteSpace = false;
+
+    //echo $arrayofrows[0];
+
+    foreach ($arrayofrows as $item)
+    {
+        //echo $item["SName"];
+        $new_form = $dom->createElement("form", "");
+        $new_form->setAttribute("method", "post");
+        $new_form->setAttribute("action", "removelikesong.php");
+
+        $new_a = $dom->createElement("a", htmlspecialchars($item[0]." "));
+        $new_a->setAttribute('href',$item[1]);
+        $dom->appendChild($new_a);
+
+
+        $new_input = $dom->createElement("input", "");
+        $new_input->setAttribute("type", "hidden");
+        $new_input->setAttribute("name", "SName");
+        $new_input->setAttribute("value", $item[0]);
+        $new_form->appendChild($new_input);
+
+        //$new_div = $dom->createElement("div", htmlspecialchars($item["SName"]." "));
+
+        $dislike = $dom->createElement("button", "Dislike");
+        $dislike->setAttribute("class", "btn-danger");
+        $dislike->setAttribute("type", "submit");
+        $new_form->appendChild($dislike);
+
+        $dom->appendChild($new_form);
+        /*
+
+                                        <form method="post" action="removelikesong.php">
+                        <div class = "row">
+                            <div class="form-group" >
+                                <input type="hidden" name="SName" value= <?php echo "'{$like1}'" ?> >
+                            </div>
+                            <button type="submit" class="btn btn-danger">Dislike</button>
+                        </div>
+                    </form>
+        */
+    }
+
+    echo $dom->saveHTML();
+    ?>
 </div>
 
 
@@ -254,3 +298,4 @@ function showPreview($num) {
 
 </body>
 </html>
+
