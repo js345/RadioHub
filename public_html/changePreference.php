@@ -86,7 +86,36 @@ function recommendSongs($num) {
     }
 }
 
+function showPreview($num) {
+    $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
+    $db_user = "csprojec_admin"; // change to your database password
+    $db_password = "admin"; // change to your database password
+    $database = "csprojec_radiohub"; // provide your database name
+    $db_table = "User"; // your database table name
+    $conn = new mysqli($hostname, $db_user, $db_password, $database);
 
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if (isset($_SESSION['login_user'])) {
+        $temp = $_SESSION['login_user'];
+    }
+
+    $SName = recommendSongs($num);
+    $sql = "SELECT URL FROM Song WHERE SName = '$SName'";
+    $result = $conn->query($sql);
+    $conn->close();
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+            return $row["URL"];
+        }
+    }
+
+}
 ?>
 
 <html>
@@ -200,12 +229,13 @@ function recommendSongs($num) {
     <h3 class="margin">Recommended Song:</h3><br>
     <div class="row">
         <div class="col-sm-4">
-            <p>
+            <a href="<?php $preview1 = showPreview(0);
+            echo $preview1; ?>">
                 <?php
                     $dislike1 = recommendSongs(0);
                     echo $dislike1;
                 ?>
-            </p>
+            </a>
             <form method="post" action="userlike.php">
                 <div class = "row">
                     <div class="form-group" >
@@ -217,12 +247,13 @@ function recommendSongs($num) {
 
         </div>
         <div class="col-sm-4">
-            <p>
+            <a href="<?php $preview2 = showPreview(1);
+            echo $preview2; ?>">
                 <?php
                     $dislike2 = recommendSongs(1);
                     echo $dislike2;
                 ?>
-            </p>
+            </a>
             <form method="post" action="userlike.php">
                 <div class = "row">
                     <div class="form-group" >
@@ -233,12 +264,13 @@ function recommendSongs($num) {
             </form>
         </div>
         <div class="col-sm-4">
-            <p>
+            <a href="<?php $preview3 = showPreview(2);
+            echo $preview3; ?>">
                 <?php
                     $dislike3 = recommendSongs(2);
                     echo $dislike3;
                 ?>
-            </p>
+            </a>
             <form method="post" action="userlike.php">
                 <div class = "row">
                     <div class="form-group" >

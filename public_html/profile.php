@@ -27,20 +27,58 @@ function showSongs($num) {
         $arrayofrows[$count] = $row;
         $count++;
     }
-    /*
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while ($row = $result->fetch_assoc()) {
-            echo $row['RName'];
-            //echo "<br>";
-        }
-    } else {
-        echo "0 results";
-    }*/
     $conn->close();
     if ($num <= $count) {
         return $arrayofrows[$num]['RName'];
     }
+}
+
+function showPreview($num) {
+    $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
+    $db_user = "csprojec_admin"; // change to your database password
+    $db_password = "admin"; // change to your database password
+    $database = "csprojec_radiohub"; // provide your database name
+    $db_table = "User"; // your database table name
+    $conn = new mysqli($hostname, $db_user, $db_password, $database);
+
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    if (isset($_SESSION['login_user'])) {
+        $temp = $_SESSION['login_user'];
+    }
+
+    $sql = "SELECT RName FROM Likes WHERE Username= '$temp'";
+
+    $result = $conn->query($sql);
+    $arrayofrows = array();
+    $count = 0;
+    while($row = mysqli_fetch_array($result))
+    {
+        $arrayofrows[$count] = $row;
+        $count++;
+    }
+    if ($num <= $count) {
+        $SName = $arrayofrows[$num]['RName'];
+    }
+    $sql = "SELECT URL FROM Song WHERE SName = '$SName'";
+    $result = $conn->query($sql);
+    $conn->close();
+
+    $arrayofrows = array();
+    $count = 0;
+    while($row = mysqli_fetch_array($result))
+    {
+        $arrayofrows[$count] = $row;
+        $count++;
+    }
+    if ($num <= $count) {
+        return $arrayofrows[0]['URL'];
+    }
+
+
 }
 ?>
 
@@ -137,12 +175,13 @@ function showSongs($num) {
     <h3 class="margin">Your Favorite Songs</h3><br>
     <div class="row">
         <div class="col-sm-4">
-            <p>
+            <a href="<?php $preview1 = showPreview(0);
+                        echo $preview1; ?>">
                 <?php
                     $like1 = showSongs(0);
                     echo $like1;
                 ?>
-            </p>
+            </a>
             <form method="post" action="removelikesong.php">
                 <div class = "row">
                     <div class="form-group" >
@@ -154,12 +193,13 @@ function showSongs($num) {
 
         </div>
         <div class="col-sm-4">
-            <p>
+            <a href="<?php $preview2 = showPreview(1);
+            echo $preview2; ?>">
                 <?php
                     $like2 = showSongs(1);
                     echo $like2;
                 ?>
-            </p>
+            </a>
             <form method="post" action="removelikesong.php">
                 <div class = "row">
                     <div class="form-group" >
@@ -170,12 +210,13 @@ function showSongs($num) {
             </form>
         </div>
         <div class="col-sm-4">
-            <p>
+            <a href="<?php $preview3 = showPreview(2);
+            echo $preview3; ?>">
                 <?php
                     $like3 = showSongs(2);
                     echo $like3;
                 ?>
-            </p>
+            </a>
             <form method="post" action="removelikesong.php">
                 <div class = "row">
                     <div class="form-group" >

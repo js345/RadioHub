@@ -19,9 +19,13 @@ if (isset($_SESSION['login_user'])) {
 //$sql = "SELECT RName FROM Likes WHERE Username= '$temp'";
 
 //$rname = $argv[1];
-$rname = $_GET['argument1'];
-$sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$rname')";
+$SName = $_GET['argument1'];
+$sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$SName')";
 
 $result = $conn->query($sql);
+
+$sql = "UPDATE Song SET Song.Ranking = Song.Ranking + 1 WHERE Song.SName = '$SName'";
+
+$query = $conn->query($sql);
 header('Location: songsearch.php');
 ?>

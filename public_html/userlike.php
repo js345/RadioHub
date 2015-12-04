@@ -14,9 +14,13 @@ if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }
 
-		$sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$SName')";
+$sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$SName')";
 
-		$query = mysqli_query($conn, $sql);
+$query = mysqli_query($conn, $sql);
+
+$sql = "UPDATE Song SET Song.Ranking = Song.Ranking + 1 WHERE SName = '$SName'";
+
+$query = mysqli_query($conn, $sql);
 	if($query) {
 	header("location: changePreference.php"); 
 	//echo "Thanks for signing up"; 
