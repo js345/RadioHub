@@ -8,22 +8,16 @@ function getlist() {
     $database = "csprojec_radiohub"; // provide your database name
     $db_table = "User"; // your database table name
     $conn = new mysqli($hostname, $db_user, $db_password, $database);
-
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
     if (isset($_SESSION['login_user'])) {
         $temp = $_SESSION['login_user'];
     }
     // $sql = "SELECT SName FROM Song";
-
     $sql = "SELECT Song.SName FROM Song WHERE Song.SName NOT IN (SELECT Likes.Rname FROM Likes WHERE Likes.Username= '$temp')";
-
     $result = $conn->query($sql);
     $arrayofrows = array();
-
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
@@ -33,11 +27,9 @@ function getlist() {
         echo "0 results";
     }
     $conn->close();
-
     return $arrayofrows;
     
 }
-
 /**
  * @param $num
  * @return mixed
@@ -49,28 +41,21 @@ function recommendSongs($num) {
     $database = "csprojec_radiohub"; // provide your database name
     $db_table = "Song"; // your database table name
     $conn = new mysqli($hostname, $db_user, $db_password, $database);
-
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
     if (isset($_SESSION['login_user'])) {
         $temp = $_SESSION['login_user'];
     }
     $sql = "SELECT Preference FROM User WHERE Username= '$temp'";
-
     $result = $conn->query($sql);
-
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             $preference = $row["Preference"];
         }
     }
-
     $sql = "SELECT DISTINCT Song.SName FROM Song JOIN Likes JOIN User WHERE Song.SName = Likes.Rname AND Likes.Username = User.Username AND User.preference = '$preference' AND Song.SName NOT IN (SELECT Rname From Likes WHERE Username = '$temp')";
-
     $result = $conn->query($sql);
     $arrayofrows = array();
     $count = 0;
@@ -85,7 +70,6 @@ function recommendSongs($num) {
         return $arrayofrows[$num]['SName'];
     }
 }
-
 function showPreview($num) {
     $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
     $db_user = "csprojec_admin"; // change to your database password
@@ -93,28 +77,22 @@ function showPreview($num) {
     $database = "csprojec_radiohub"; // provide your database name
     $db_table = "User"; // your database table name
     $conn = new mysqli($hostname, $db_user, $db_password, $database);
-
-
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
     if (isset($_SESSION['login_user'])) {
         $temp = $_SESSION['login_user'];
     }
-
     $SName = recommendSongs($num);
     $sql = "SELECT URL FROM Song WHERE SName = '$SName'";
     $result = $conn->query($sql);
     $conn->close();
-
     if ($result->num_rows > 0) {
         // output data of each row
         while ($row = $result->fetch_assoc()) {
             return $row["URL"];
         }
     }
-
 }
 ?>
 
