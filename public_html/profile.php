@@ -232,7 +232,93 @@ function showPreview($num) {
         </div>
 
         <div class="col-sm-4" id = "displaysongs">
-            <h3 class="margin">MORE SONG</h3><br>
+            <h3 class="margin">MORE SONGS</h3><br>
+            <?php> 
+                $hostname = "engr-cpanel-mysql.engr.illinois.edu"; // usually is localhost
+                $db_user = "csprojec_admin"; // change to your database password
+                $db_password = "admin"; // change to your database password
+                $database = "csprojec_radiohub"; // provide your database name
+                $db_table = "User"; // your database table name
+                $conn = new mysqli($hostname, $db_user, $db_password, $database);
+
+
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                if (isset($_SESSION['login_user'])) {
+                    $temp = $_SESSION['login_user'];
+                }
+                //echo $argv[1];
+                //$sql = "SELECT RName FROM Likes WHERE Username= '$temp'";
+
+                //$rname = $argv[1];
+
+                $sql = "SELECT RName FROM Likes WHERE Username = '$temp'";
+
+                $result = $conn->query($sql);
+                $arrayofrows = array();
+                $count = 0;
+                while ($row = $result->fetch_assoc())
+                {
+                    array_push($arrayofrows, $row['RName']);
+                    //$arrayofrows[$count] = $row;
+                    $count++;
+                }
+                $conn->close();
+
+                $dom = new DOMDocument();
+                $dom->validateOnParse = true; //<!-- this first
+
+                 //echo $dom->load("songsearch.php");
+                libxml_use_internal_errors(true);
+                $dom->loadHTML("<html></html>");
+                libxml_use_internal_errors(false);
+                $dom->preserveWhiteSpace = false;
+
+                //echo $arrayofrows[0];
+
+                foreach ($arrayofrows as $item)
+                {
+                    //echo $item["SName"];
+                    $new_form = $dom->createElement("form", htmlspecialchars($item." "));
+                    $new_form->setAttribute("method", "post");
+                    $new_form->setAttribute("action", "removelikesong.php");
+
+                    $new_a = $dom->createElement("a", "");
+                    $dom->appendChild($new_a);
+
+
+                    $new_input = $dom->createElement("input", "");
+                    $new_input->setAttribute("type", "hidden");
+                    $new_input->setAttribute("name", "SName");
+                    $new_input->setAttribute("value", $item);
+                    $new_form->appendChild($new_input);
+
+                    //$new_div = $dom->createElement("div", htmlspecialchars($item["SName"]." "));
+
+                    $dislike = $dom->createElement("button", "Dislike");
+                    $dislike->setAttribute("class", "btn-danger");
+                    $dislike->setAttribute("type", "submit");
+                    $new_form->appendChild($dislike);
+
+                    $dom->appendChild($new_form);
+/*
+
+                                <form method="post" action="removelikesong.php">
+                <div class = "row">
+                    <div class="form-group" >
+                        <input type="hidden" name="SName" value= <?php echo "'{$like1}'" ?> >
+                    </div>
+                    <button type="submit" class="btn btn-danger">Dislike</button>
+                </div>
+            </form>
+*/
+                }
+
+                echo $dom->saveHTML();
+
+             ?>
         </div>
     </div>
 </div>
