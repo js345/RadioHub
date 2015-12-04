@@ -67,15 +67,11 @@ function showPreview($num) {
     $result = $conn->query($sql);
     $conn->close();
 
-    $arrayofrows = array();
-    $count = 0;
-    while($row = mysqli_fetch_array($result))
-    {
-        $arrayofrows[$count] = $row;
-        $count++;
-    }
-    if ($num <= $count) {
-        return $arrayofrows[0]['URL'];
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+            return $row["URL"];
+        }
     }
 
 
