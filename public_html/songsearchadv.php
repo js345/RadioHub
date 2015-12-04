@@ -18,7 +18,7 @@ if (isset($_SESSION['login_user'])){
 function filterSong($name)
     {
     	//return TRUE;
-        return strpos($name, '\'') == FALSE && strpos($name, '\"') == FALSE;
+        return strpos($name, '\'') === FALSE && strpos($name, '"') === FALSE;
     }
 function filterGenre($genre)
     {
@@ -77,6 +77,11 @@ $result = $conn->query($sql);
 	    echo "<br>";
 
 	    $url_name = str_replace(" ", "+", $song_key);
+	    if ($url_name == "")
+	    	$url_name .= str_replace(" ", "+", $artist_key);
+	    if ($url_name == "")
+	    	$url_name .= str_replace(" ", "+", $genre);
+	    echo $url_name;
 		$url = "https://itunes.apple.com/search?term=";
 		$url .= $url_name;
 		$url .= "&entity=song";
@@ -101,12 +106,15 @@ $result = $conn->query($sql);
 		$dom->preserveWhiteSpace = false;
 		$results = $dom->getElementById("results");
 
+		if ($json_songs["resultCount"] == "0")
+			echo "No more info from internet";
+
 		foreach ($json_songs["results"] as $item) {
 		//insert Song data into DB
 			if (filterSong($item["trackName"]) && filterGenre($item["primaryGenreName"]))
 			{
 
-				$new_div = $dom->createElement("div", $item["trackName"]." ");
+				$new_div = $dom->createElement("div", htmlspecialchars($item["trackName"]." "));
 
         		$adlk = $dom->createElement("a", "Add and Like ");
         		$adlk->setAttribute("class", "btn-large");
