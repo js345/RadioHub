@@ -12,3 +12,4 @@
 * 6. git pull
 * 7. cd ../
 * 8. cp -r RadioHub/public_html ./
+* 9. chmod -R 755 public_html/
