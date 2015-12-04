@@ -13,6 +13,12 @@ $SName= $_POST['SName'];
 if (isset($_SESSION['login_user'])){
 	$temp =  $_SESSION['login_user'];
 }
+$sql = "SELECT Song.SName From Song WHERE Song.SName = '$SName'";
+$query = mysqli_query($conn, $sql);
+if ($result->num_rows <= 0) {
+    // output data of each row
+    header("location: changePreference.php");
+}
 
 $sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$SName')";
 

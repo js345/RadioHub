@@ -20,6 +20,12 @@ if (isset($_SESSION['login_user'])) {
 
 //$rname = $argv[1];
 $SName = $_GET['argument1'];
+$sql = "SELECT Song.SName From Song WHERE Song.SName = '$SName'";
+$query = $conn->query($sql);
+if ($result->num_rows <= 0) {
+    // output data of each row
+    header("location: changePreference.php");
+}
 $sql = "INSERT INTO Likes (Username, RName) VALUES ('$temp', '$SName')";
 
 $result = $conn->query($sql);
