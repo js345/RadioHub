@@ -75,10 +75,11 @@ function showPreview($num) {
     }
 
 
-}
+    }
 ?>
 
-<html>
+
+<html>       
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>RadioHub</title>
@@ -88,6 +89,13 @@ function showPreview($num) {
     <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">$( document ).ready(function() {
+    showMore();
+    });</script>
+
+
     <style>
         body {
             font: 20px Montserrat, sans-serif;
@@ -221,7 +229,10 @@ function showPreview($num) {
                     <button type="submit" class="btn btn-danger">Dislike</button>
                 </div>
             </form>
-            <!-- img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image" -->
+        </div>
+
+        <div class="col-sm-4" id = "displaysongs">
+            <h3 class="margin">MORE SONG</h3><br>
         </div>
     </div>
 </div>
