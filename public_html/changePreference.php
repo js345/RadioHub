@@ -55,7 +55,7 @@ function recommendSongs($num) {
             $preference = $row["Preference"];
         }
     }
-    $sql = "SELECT DISTINCT Song.SName FROM Song JOIN Likes JOIN User WHERE Song.SName = Likes.Rname AND Likes.Username = User.Username AND User.preference = '$preference' AND Song.SName NOT IN (SELECT Rname From Likes WHERE Username = '$temp')";
+    $sql = "SELECT Song.SName, Song.Ranking FROM Song WHERE Song.SName NOT IN (SELECT Likes.Rname FROM Likes WHERE Likes.Username= '$temp') ORDER BY Song.Ranking DESC";
     $result = $conn->query($sql);
     $arrayofrows = array();
     $count = 0;
